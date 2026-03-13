@@ -17,15 +17,16 @@
         @keyframes pulse-fade { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         .animate-soft-pulse { animation: pulse-fade 3s ease-in-out infinite; }
         
-        /* Ticker Infinito Sem Falhas */
+        /* Ticker Corrigido - Deslize Infinito Real */
         @keyframes ticker {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         .animate-ticker { 
             display: flex;
+            white-space: nowrap;
             width: fit-content;
-            animation: ticker 45s linear infinite; 
+            animation: ticker 40s linear infinite; 
         }
 
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
@@ -182,22 +183,22 @@
 
     </main>
 
-    <div class="bg-green-600 text-white py-4 overflow-hidden shadow-lg">
-        <div class="animate-ticker">
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">60+ Professional High-Definition Illustrations</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Join the DinoZito Community</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Every stroke tells a story</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Amazon Global Shipping Active Worldwide</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Unleash the artist within</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">60+ Professional High-Definition Illustrations</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Join the DinoZito Community</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Every stroke tells a story</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Amazon Global Shipping Active Worldwide</span>
-            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Unleash the artist within</span>
+    <div class="bg-green-600 text-white py-4 overflow-hidden shadow-lg flex">
+        <div class="animate-ticker flex whitespace-nowrap">
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">60+ Professional High-Definition Illustrations</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Join the DinoZito Community</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Every stroke tells a story</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Amazon Global Shipping Active Worldwide</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Unleash the artist within</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">60+ Professional High-Definition Illustrations</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Join the DinoZito Community</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Every stroke tells a story</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Amazon Global Shipping Active Worldwide</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em] flex-shrink-0">Unleash the artist within</span>
         </div>
     </div>
 
-    <footer class="bg-white py-12 text-center">
+    <footer class="bg-white py-12 text-center border-t border-gray-50">
         <img src="logo.png" alt="DinoZito Logo" class="h-8 mx-auto mb-6 grayscale opacity-10">
         <p class="text-gray-300 text-[9px] tracking-[0.3em] uppercase italic">Design & Content by André Ferreira | © 2026 dinozito.official</p>
     </footer>
