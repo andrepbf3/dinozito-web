@@ -10,154 +10,188 @@
         body { font-family: 'Outfit', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; overflow-x: hidden; }
         .font-title { font-family: 'Fredoka', sans-serif; }
         .bg-dots { background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 20px 20px; }
-        .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-        
-        /* Animações */
         @keyframes pulse-fade { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         .animate-soft-pulse { animation: pulse-fade 3s ease-in-out infinite; }
-
-        @keyframes ticker {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-ticker { animation: ticker 25s linear infinite; display: inline-block; white-space: nowrap; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .animate-ticker { animation: ticker 30s linear infinite; display: inline-block; white-space: nowrap; }
+        
+        /* FAQ Accordion Logic */
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item:focus-within .faq-content { max-height: 200px; padding-top: 1rem; }
+        .faq-item:focus-within svg { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-dots text-slate-800 no-select">
+<body class="bg-dots text-slate-800">
 
     <div class="bg-green-600 text-white text-center py-2.5 text-[10px] md:text-xs font-bold uppercase tracking-widest px-4 sticky top-0 z-50 shadow-md animate-soft-pulse">
         🚀 LAUNCH: SPECIAL INTRODUCTORY PRICES ON AMAZON FOR A LIMITED TIME
     </div>
 
     <header class="py-12 text-center px-6">
-        <img src="logo.png" alt="DinoZito Logo" class="h-24 mx-auto mb-4 hover:scale-110 transition-transform duration-500">
+        <img src="logo.png" alt="DinoZito Logo" class="h-24 mx-auto mb-4 hover:scale-105 transition-transform duration-500">
         <p class="text-gray-400 uppercase tracking-[0.4em] text-[10px] font-bold">Unleash Your Creativity</p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 pb-24 space-y-24">
+    <main class="max-w-5xl mx-auto px-6 pb-24 space-y-20">
 
         <section class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-green-50 p-10 rounded-[3rem] border border-green-100 shadow-inner">
-            <div><div class="text-3xl mb-3">🧠</div><h3 class="font-title text-green-700 text-xl mb-2">Focus & Calm</h3><p class="text-green-900/60 text-sm">Boost concentration and reduce anxiety through professional art.</p></div>
-            <div><div class="text-3xl mb-3">🎨</div><h3 class="font-title text-green-700 text-xl mb-2">Pure Creativity</h3><p class="text-green-900/60 text-sm">60+ unique professional illustrations to spark imagination.</p></div>
-            <div><div class="text-3xl mb-3">0️⃣</div><h3 class="font-title text-green-700 text-xl mb-2">Screen-Free</h3><p class="text-green-900/60 text-sm">The ultimate activity to keep little explorers engaged and inspired.</p></div>
+            <div><div class="text-3xl mb-3">🧠</div><h3 class="font-title text-green-700 text-xl mb-2">Focus & Calm</h3><p class="text-green-900/60 text-sm">Boost concentration and reduce anxiety.</p></div>
+            <div><div class="text-3xl mb-3">🎨</div><h3 class="font-title text-green-700 text-xl mb-2">Pure Creativity</h3><p class="text-green-900/60 text-sm">60+ unique professional illustrations.</p></div>
+            <div><div class="text-3xl mb-3">📵</div><h3 class="font-title text-green-700 text-xl mb-2">Screen-Free</h3><p class="text-green-900/60 text-sm">The ultimate active engagement.</p></div>
         </section>
 
+        <div class="flex flex-col items-center gap-6 py-4">
+            <p class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">Follow the DinoZito Journey</p>
+            <div class="flex justify-center items-center gap-10">
+                <a href="https://www.tiktok.com/@dinozito.official" target="_blank" class="text-slate-400 hover:text-black transition-all hover:scale-125"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.03 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-1.13-.32-2.43-.2-3.41.47-.51.33-.86.85-.93 1.45-.1.57.11 1.18.49 1.63.4.5.99.73 1.62.75 1.14.06 2.19-.6 2.58-1.67.12-.4.19-.81.18-1.22.01-4.1.01-8.2.02-12.3z"/></svg></a>
+                <a href="https://www.instagram.com/dinozito.official/" target="_blank" class="text-slate-400 hover:text-pink-500 transition-all hover:scale-125"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31 9.75.975 1.247 2.242 1.31 3.608.058 1.266.069 1.646.069 4.85s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.247-3.608 1.31-1.266.058-1.646.069-4.85.069s-3.584-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608-.058-1.266-.069-1.646-.069-4.85s.011-3.584.069-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.397-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.337-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://pt.pinterest.com/dinozitoofficial/" target="_blank" class="text-slate-400 hover:text-red-600 transition-all hover:scale-125"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg></a>
+                <a href="https://www.facebook.com/dinozito.official" target="_blank" class="text-slate-400 hover:text-blue-600 transition-all hover:scale-125"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://www.youtube.com/@dinozito.official" target="_blank" class="text-slate-400 hover:text-red-500 transition-all hover:scale-125"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+            </div>
+        </div>
+
         <div class="space-y-16">
-            <section class="group flex flex-col md:flex-row items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl">
-                <div class="w-full md:w-1/2 flex justify-center gap-4 transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-1">
-                    <img src="capa-en.jpg" alt="EN" class="w-1/2 rounded-r-lg shadow-2xl">
-                    <img src="contracapa-en.jpg" alt="EN Back" class="w-1/2 rounded-l-lg shadow-xl opacity-90">
+            <section class="flex flex-col md:flex-row items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500">
+                <div class="w-full md:w-1/2 flex justify-center gap-4">
+                    <img src="capa-en.jpg" class="w-1/2 rounded-r-lg shadow-2xl transition-transform duration-500 hover:-translate-y-2 hover:rotate-1">
+                    <img src="contracapa-en.jpg" class="w-1/2 rounded-l-lg shadow-xl opacity-90 transition-transform duration-500 hover:-translate-y-2 hover:-rotate-1">
                 </div>
                 <div class="w-full md:w-1/2 text-center md:text-left">
-                    <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Global Edition</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Global Edition • English</span>
                     <h2 class="font-title text-4xl mt-4 mb-4 text-blue-600">60 Professions to Color</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">High-definition outlines for a premium coloring experience. Worldwide shipping.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">High-definition outlines for a premium coloring experience. Worldwide shipping available.</p>
                     <a href="https://mybook.to/DinoZitoEN" target="_blank" class="inline-block w-full md:w-auto bg-blue-500 text-white font-bold px-12 py-5 rounded-2xl text-xl hover:bg-blue-600 transition-all shadow-lg active:scale-95">Buy on Amazon</a>
                 </div>
             </section>
-
-            <section class="group flex flex-col md:flex-row-reverse items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl">
-                <div class="w-full md:w-1/2 flex justify-center gap-4 transition-transform duration-500 group-hover:-translate-y-3 group-hover:-rotate-1">
-                    <img src="capa-es.jpg" alt="ES" class="w-1/2 rounded-r-lg shadow-2xl">
-                    <img src="contracapa-es.jpg" alt="ES Back" class="w-1/2 rounded-l-lg shadow-xl opacity-90">
+            <section class="flex flex-col md:flex-row-reverse items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500">
+                <div class="w-full md:w-1/2 flex justify-center gap-4">
+                    <img src="capa-es.jpg" class="w-1/2 rounded-r-lg shadow-2xl transition-transform duration-500 hover:-translate-y-2 hover:rotate-1">
+                    <img src="contracapa-es.jpg" class="w-1/2 rounded-l-lg shadow-xl opacity-90 transition-transform duration-500 hover:-translate-y-2 hover:-rotate-1">
                 </div>
                 <div class="w-full md:w-1/2 text-center md:text-left">
-                    <span class="bg-red-100 text-red-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">LatAm • España</span>
+                    <span class="bg-red-100 text-red-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">España • México • LatAm</span>
                     <h2 class="font-title text-4xl mt-4 mb-4 text-red-500">60 Profesiones para Colorear</h2>
                     <p class="text-gray-600 mb-8 leading-relaxed">¡Aprende coloreando! Una aventura educativa diseñada para ti.</p>
                     <a href="https://mybook.to/DinoZitoES" target="_blank" class="inline-block w-full md:w-auto bg-red-500 text-white font-bold px-12 py-5 rounded-2xl text-xl hover:bg-red-600 transition-all shadow-lg active:scale-95">Comprar en Amazon</a>
                 </div>
             </section>
-
-            <section class="group flex flex-col md:flex-row items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl">
-                <div class="w-full md:w-1/2 flex justify-center gap-4 transition-transform duration-500 group-hover:-translate-y-3 group-hover:rotate-1">
-                    <img src="capa-pt.jpg" alt="PT" class="w-1/2 rounded-r-lg shadow-2xl">
-                    <img src="contracapa-pt.jpg" alt="PT Back" class="w-1/2 rounded-l-lg shadow-xl opacity-90">
+            <section class="flex flex-col md:flex-row items-center gap-12 bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 transition-all duration-500">
+                <div class="w-full md:w-1/2 flex justify-center gap-4">
+                    <img src="capa-pt.jpg" class="w-1/2 rounded-r-lg shadow-2xl transition-transform duration-500 hover:-translate-y-2 hover:rotate-1">
+                    <img src="contracapa-pt.jpg" class="w-1/2 rounded-l-lg shadow-xl opacity-90 transition-transform duration-500 hover:-translate-y-2 hover:-rotate-1">
                 </div>
                 <div class="w-full md:w-1/2 text-center md:text-left">
-                    <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Portugal • Brasil</span>
+                    <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Brasil • Portugal • PALOP</span>
                     <h2 class="font-title text-4xl mt-4 mb-4 text-green-600">60 Profissões para Colorir</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Estimula o futuro dos mais pequenos com desenhos profissionais.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Estimula o futuro dos mais pequenos com desenhos profissionais de alta qualidade.</p>
                     <a href="https://mybook.to/DinoZitoPT" target="_blank" class="inline-block w-full md:w-auto bg-green-500 text-white font-bold px-12 py-5 rounded-2xl text-xl hover:bg-green-600 transition-all shadow-lg active:scale-95">Comprar na Amazon</a>
                 </div>
             </section>
         </div>
 
-        <section class="text-center pt-10">
+        <section class="text-center pt-10 px-6">
             <h2 class="font-title text-3xl mb-2 text-gray-700 uppercase tracking-tight">Take a look inside!</h2>
             <p class="text-gray-400 mb-10 text-sm italic">Blank pages for their creativity, colored for inspiration</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="space-y-2"><img src="interior-1-bw.jpg" alt="B&W" class="rounded-2xl shadow-lg border"><span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Original Drawing</span></div>
-                <div class="space-y-2"><img src="interior-1-color.jpg" alt="Color" class="rounded-2xl shadow-lg border-2 border-green-200 transform scale-105"><span class="text-[10px] font-bold text-green-400 uppercase tracking-widest">Artist Suggestion</span></div>
-                <div class="space-y-2"><img src="interior-2-bw.jpg" alt="B&W" class="rounded-2xl shadow-lg border"><span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Original Drawing</span></div>
-                <div class="space-y-2"><img src="interior-2-color.jpg" alt="Color" class="rounded-2xl shadow-lg border-2 border-green-200 transform scale-105"><span class="text-[10px] font-bold text-green-400 uppercase tracking-widest">Artist Suggestion</span></div>
+                <div class="space-y-2"><img src="interior-1-bw.jpg" class="rounded-2xl shadow-lg border border-gray-100 transition-transform hover:-translate-y-1"><span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Original</span></div>
+                <div class="space-y-2"><img src="interior-1-color.jpg" class="rounded-2xl shadow-lg border-2 border-green-200 transform scale-105 transition-transform hover:scale-110"><span class="text-[10px] font-bold text-green-400 uppercase tracking-widest">Suggestion</span></div>
+                <div class="space-y-2"><img src="interior-2-bw.jpg" class="rounded-2xl shadow-lg border border-gray-100 transition-transform hover:-translate-y-1"><span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Original</span></div>
+                <div class="space-y-2"><img src="interior-2-color.jpg" class="rounded-2xl shadow-lg border-2 border-green-200 transform scale-105 transition-transform hover:scale-110"><span class="text-[10px] font-bold text-green-400 uppercase tracking-widest">Suggestion</span></div>
             </div>
         </section>
 
         <section class="py-16 bg-slate-100/50 rounded-[3rem] text-center border border-dashed border-slate-200">
-            <h2 class="font-title text-3xl mb-2 text-slate-600">The DinoZito Universe</h2>
-            <p class="text-slate-400 text-sm mb-12">Expanding the world of imagination...</p>
-            
+            <h2 class="font-title text-3xl mb-2 text-slate-600 uppercase tracking-tight">The DinoZito Universe</h2>
+            <p class="text-slate-400 text-sm mb-12 italic">Expanding the world of imagination...</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto px-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                    <div class="text-3xl mb-2">🎁</div>
-                    <h4 class="font-bold text-slate-700 text-sm">Community Giveaway</h4>
-                    <p class="text-[11px] text-slate-400 mt-1">Join our community! A special physical 3D DinoZito or custom gift is coming soon.</p>
-                    <span class="mt-4 text-[9px] font-bold text-green-500 uppercase bg-green-50 px-2 py-1 rounded">Stay Tuned</span>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-3xl mb-4">🎁</div>
+                    <h4 class="font-bold text-slate-700 text-sm mb-2 uppercase">Join our Community!</h4>
+                    <p class="text-[11px] text-slate-400">Special contests and gifts coming soon.</p>
+                    <span class="inline-block mt-4 text-[9px] font-bold text-green-500 uppercase bg-green-50 px-2 py-1 rounded tracking-widest">Stay Tuned</span>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                    <div class="text-3xl mb-2">📖</div>
-                    <h4 class="font-bold text-slate-700 text-sm">Story Books Edition</h4>
-                    <p class="text-[11px] text-slate-400 mt-1">Epic tales and illustrated adventures starring our favorite dinosaur.</p>
-                    <span class="mt-4 text-[9px] font-bold text-blue-400 uppercase bg-blue-50 px-2 py-1 rounded">Late 2026</span>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-3xl mb-4">📖</div>
+                    <h4 class="font-bold text-slate-700 text-sm mb-2 uppercase">Story Books</h4>
+                    <p class="text-[11px] text-slate-400">Epic tales and adventures starring our favorite dinosaur.</p>
+                    <span class="inline-block mt-4 text-[9px] font-bold text-blue-400 uppercase bg-blue-50 px-2 py-1 rounded tracking-widest">Late 2026</span>
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                    <div class="text-3xl mb-2">🌟</div>
-                    <h4 class="font-bold text-slate-700 text-sm">Special Collections</h4>
-                    <p class="text-[11px] text-slate-400 mt-1">Limited themed editions for holidays and global celebrations.</p>
-                    <span class="mt-4 text-[9px] font-bold text-amber-400 uppercase bg-amber-50 px-2 py-1 rounded">In Design</span>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-3xl mb-4">🌟</div>
+                    <h4 class="font-bold text-slate-700 text-sm mb-2 uppercase">Custom Collections</h4>
+                    <p class="text-[11px] text-slate-400">Customizable items like mugs, t-shirts and more.</p>
+                    <span class="inline-block mt-4 text-[9px] font-bold text-amber-400 uppercase bg-amber-50 px-2 py-1 rounded tracking-widest">Under Design</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto space-y-4">
+            <h2 class="font-title text-3xl text-center mb-10 text-gray-700 uppercase tracking-tight">Common Questions</h2>
+            
+            <div class="faq-item group bg-white border border-gray-100 rounded-3xl p-6 shadow-sm focus-within:shadow-md transition-all outline-none" tabindex="0">
+                <div class="flex justify-between items-center cursor-pointer">
+                    <h4 class="font-bold text-gray-700 text-sm uppercase">Where do you ship to?</h4>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-content text-slate-400 text-sm leading-relaxed">
+                    We ship worldwide through Amazon. Whether you are in Brazil, Portugal, USA, or Spain, your book will be printed and shipped from the nearest Amazon facility.
+                </div>
+            </div>
+
+            <div class="faq-item group bg-white border border-gray-100 rounded-3xl p-6 shadow-sm focus-within:shadow-md transition-all outline-none" tabindex="0">
+                <div class="flex justify-between items-center cursor-pointer">
+                    <h4 class="font-bold text-gray-700 text-sm uppercase">What is the paper quality?</h4>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-content text-slate-400 text-sm leading-relaxed">
+                    Our books feature high-quality outlines on single-sided pages. This prevents bleed-through and allows kids to use crayons, colored pencils, or even light markers without ruining the next drawing.
+                </div>
+            </div>
+
+            <div class="faq-item group bg-white border border-gray-100 rounded-3xl p-6 shadow-sm focus-within:shadow-md transition-all outline-none" tabindex="0">
+                <div class="flex justify-between items-center cursor-pointer">
+                    <h4 class="font-bold text-gray-700 text-sm uppercase">What age group is this for?</h4>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-content text-slate-400 text-sm leading-relaxed">
+                    The DinoZito Professions collection is perfect for children aged 4 to 10. The drawings are clear enough for younger kids, but detailed enough to keep older children engaged.
                 </div>
             </div>
         </section>
 
         <section class="text-center bg-white border border-gray-100 p-12 rounded-[3rem] shadow-sm max-w-2xl mx-auto">
-            <div class="mb-6 flex justify-center">
-                <div class="bg-slate-50 p-4 rounded-full text-2xl">📬</div>
-            </div>
-            <h2 class="font-title text-2xl mb-2 text-gray-700">Get in Touch</h2>
-            <p class="text-gray-400 mb-8 text-sm">Collaborations, bulk orders, or just to say hi!</p>
+            <h2 class="font-title text-2xl mb-2 text-gray-700 tracking-tight uppercase">Get in Touch</h2>
+            <p class="text-gray-400 mb-8 text-sm">Collaborations, questions or just to say hi!</p>
             <div class="flex flex-col items-center gap-4">
-                <a href="mailto:hello@dinozito.com" class="bg-slate-800 text-white font-bold px-10 py-3 rounded-xl hover:bg-black transition-all shadow-md active:scale-95">
+                <a href="mailto:hello@dinozito.com" class="bg-slate-800 text-white font-bold px-10 py-4 rounded-2xl hover:bg-black transition-all shadow-md active:scale-95">
                     Contact Me
                 </a>
-                <p class="text-xs font-mono text-slate-300 hover:text-slate-500 transition-colors cursor-all-scroll">hello@dinozito.com</p>
+                <p class="text-xs font-mono text-slate-400 select-text cursor-text border-b border-transparent hover:border-slate-200 transition-all pb-1">hello@dinozito.com</p>
             </div>
         </section>
 
     </main>
 
-    <div class="bg-slate-900 text-white py-3 overflow-hidden border-t border-slate-800">
+    <div class="bg-green-600 text-white py-3.5 overflow-hidden shadow-[0_-4px_15px_rgba(0,0,0,0.05)]">
         <div class="animate-ticker">
-            <span class="mx-8 uppercase text-[10px] font-bold tracking-[0.2em] opacity-80">60+ High-Definition Professional Illustrations</span>
-            <span class="mx-8 uppercase text-[10px] font-bold tracking-[0.2em] text-green-400">Join the DinoZito coloring community</span>
-            <span class="mx-8 uppercase text-[10px] font-bold tracking-[0.2em] opacity-80">Every stroke tells a story</span>
-            <span class="mx-8 uppercase text-[10px] font-bold tracking-[0.2em] text-blue-400">Amazon Global Shipping Active</span>
-            <span class="mx-8 uppercase text-[10px] font-bold tracking-[0.2em] opacity-80">Unleash the artist within your child</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">60+ Professional High-Definition Illustrations</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Join the DinoZito Coloring Community</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Every stroke tells a story</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Amazon Global Shipping Active Worldwide</span>
+            <span class="mx-10 uppercase text-[11px] font-bold tracking-[0.25em]">Unleash the artist within</span>
         </div>
     </div>
 
-    <footer class="bg-white py-16 text-center px-6">
-        <img src="logo.png" alt="DinoZito Logo" class="h-10 mx-auto mb-10 grayscale opacity-20">
-        <div class="flex flex-wrap justify-center items-center gap-10 mb-10">
-            <a href="https://www.tiktok.com/@dinozito.official" target="_blank" class="opacity-30 hover:opacity-100 transition-all hover:scale-110"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.03 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-1.13-.32-2.43-.2-3.41.47-.51.33-.86.85-.93 1.45-.1.57.11 1.18.49 1.63.4.5.99.73 1.62.75 1.14.06 2.19-.6 2.58-1.67.12-.4.19-.81.18-1.22.01-4.1.01-8.2.02-12.3z"/></svg></a>
-            <a href="https://www.instagram.com/dinozito.official/" target="_blank" class="opacity-30 hover:opacity-100 transition-all hover:scale-110"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31 9.75.975 1.247 2.242 1.31 3.608.058 1.266.069 1.646.069 4.85s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.247-3.608 1.31-1.266.058-1.646.069-4.85.069s-3.584-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608-.058-1.266-.069-1.646-.069-4.85s.011-3.584.069-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31 1.266-.058 1.646-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.397-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.337-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-            <a href="https://pt.pinterest.com/dinozitoofficial/" target="_blank" class="opacity-30 hover:opacity-100 transition-all hover:scale-110"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg></a>
-            <a href="https://www.facebook.com/dinozito.official" target="_blank" class="opacity-30 hover:opacity-100 transition-all hover:scale-110"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://www.youtube.com/@dinozito.official" target="_blank" class="opacity-30 hover:opacity-100 transition-all hover:scale-110"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
-        </div>
-        <p class="text-gray-300 text-[10px] tracking-widest uppercase italic">Design & Content by André Ferreira | © 2026 dinozito.official</p>
+    <footer class="bg-white py-12 text-center">
+        <img src="logo.png" alt="DinoZito Logo" class="h-8 mx-auto mb-6 grayscale opacity-10">
+        <p class="text-gray-300 text-[9px] tracking-[0.3em] uppercase italic">Design & Content by André Ferreira | © 2026 dinozito.official</p>
     </footer>
 
-    <script> document.addEventListener('contextmenu', function(e) { e.preventDefault(); }); </script>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') { e.preventDefault(); }
+        });
+    </script>
 </body>
 </html>
