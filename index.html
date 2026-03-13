@@ -1,13 +1,3 @@
-<section class="py-16 bg-slate-100/50 rounded-[3rem] text-center border border-dashed border-slate-200">
-    <h2 class="font-title text-3xl mb-2 text-slate-600 uppercase tracking-[0.2em] px-4">The DinoZito Universe</h2>
-    <p class="text-slate-400 text-sm mb-12 italic">Expanding the world of imagination...</p>
-    ```
-
----
-
-### 🦖 O Código Final Consolidado (`index.html`)
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,28 +6,15 @@
     <title>DinoZito - Professional Coloring Books</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    
     <script data-goatcounter="https://dinozito.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
     <style>
         body { font-family: 'Outfit', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; overflow-x: hidden; }
         .font-title { font-family: 'Fredoka', sans-serif; }
         .bg-dots { background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 20px 20px; }
-        
         @keyframes pulse-fade { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         .animate-soft-pulse { animation: pulse-fade 3s ease-in-out infinite; }
-        
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-ticker { 
-            display: flex;
-            white-space: nowrap;
-            width: fit-content;
-            animation: ticker 45s linear infinite; 
-        }
-
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-ticker { display: flex; white-space: nowrap; width: fit-content; animation: ticker 45s linear infinite; }
         .faq-content { max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; opacity: 0; }
         .faq-item.active .faq-content { max-height: 300px; opacity: 1; padding-top: 1rem; }
         .faq-item.active svg { transform: rotate(180deg); }
@@ -59,7 +36,7 @@
         <section class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-green-50 p-10 rounded-[3rem] border border-green-100 shadow-inner">
             <div><div class="text-3xl mb-3">🧠</div><h3 class="font-title text-green-700 text-xl mb-2">Focus & Calm</h3><p class="text-green-900/60 text-sm">Boost concentration and reduce anxiety through professional art.</p></div>
             <div><div class="text-3xl mb-3">🎨</div><h3 class="font-title text-green-700 text-xl mb-2">Pure Creativity</h3><p class="text-green-900/60 text-sm">60+ HD illustrations with <b>single-sided pages</b> to prevent bleed-through.</p></div>
-            <div><div class="text-3xl mb-3">📵</div><h3 class="font-title text-green-700 text-xl mb-2">Screen-Free</h3><p class="text-green-900/60 text-sm">The ultimate active engagement to keep explorers inspired and focused.</p></div>
+            <div><div class="text-3xl mb-3"></div><h3 class="font-title text-green-700 text-xl mb-2">Screen-Free</h3><p class="text-green-900/60 text-sm">The ultimate active engagement to keep explorers inspired and focused.</p></div>
         </section>
 
         <div class="flex flex-col items-center gap-8">
@@ -209,7 +186,6 @@
             });
             element.classList.toggle('active');
         }
-
         document.addEventListener('contextmenu', function(e) {
             if (e.target.tagName === 'IMG') { e.preventDefault(); }
         });
